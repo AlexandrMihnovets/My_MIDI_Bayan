@@ -3,72 +3,337 @@ My_MIDI_Bayan.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000003e  00000000  00000000  00000054  2**1
+  0 .text         00000168  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .comment      00000030  00000000  00000000  00000092  2**0
+  1 .bss          00000003  00800060  00800060  000001dc  2**0
+                  ALLOC
+  2 .comment      00000030  00000000  00000000  000001dc  2**0
                   CONTENTS, READONLY
-  2 .debug_aranges 00000020  00000000  00000000  000000c2  2**0
+  3 .debug_aranges 00000028  00000000  00000000  0000020c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  3 .debug_info   0000007c  00000000  00000000  000000e2  2**0
+  4 .debug_info   000000fa  00000000  00000000  00000234  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_abbrev 00000046  00000000  00000000  0000015e  2**0
+  5 .debug_abbrev 000000b0  00000000  00000000  0000032e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_line   00000041  00000000  00000000  000001a4  2**0
+  6 .debug_line   00000104  00000000  00000000  000003de  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_frame  00000024  00000000  00000000  000001e8  2**2
+  7 .debug_frame  00000034  00000000  00000000  000004e4  2**2
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_str    00000134  00000000  00000000  0000020c  2**0
+  8 .debug_str    00000149  00000000  00000000  00000518  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_ranges 00000010  00000000  00000000  00000340  2**0
+  9 .debug_loc    00000127  00000000  00000000  00000661  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000018  00000000  00000000  00000788  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
-   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
-   2:	19 c0       	rjmp	.+50     	; 0x36 <__bad_interrupt>
-   4:	18 c0       	rjmp	.+48     	; 0x36 <__bad_interrupt>
-   6:	17 c0       	rjmp	.+46     	; 0x36 <__bad_interrupt>
-   8:	16 c0       	rjmp	.+44     	; 0x36 <__bad_interrupt>
-   a:	15 c0       	rjmp	.+42     	; 0x36 <__bad_interrupt>
-   c:	14 c0       	rjmp	.+40     	; 0x36 <__bad_interrupt>
-   e:	13 c0       	rjmp	.+38     	; 0x36 <__bad_interrupt>
-  10:	12 c0       	rjmp	.+36     	; 0x36 <__bad_interrupt>
-  12:	11 c0       	rjmp	.+34     	; 0x36 <__bad_interrupt>
-  14:	10 c0       	rjmp	.+32     	; 0x36 <__bad_interrupt>
-  16:	0f c0       	rjmp	.+30     	; 0x36 <__bad_interrupt>
-  18:	0e c0       	rjmp	.+28     	; 0x36 <__bad_interrupt>
-  1a:	0d c0       	rjmp	.+26     	; 0x36 <__bad_interrupt>
-  1c:	0c c0       	rjmp	.+24     	; 0x36 <__bad_interrupt>
-  1e:	0b c0       	rjmp	.+22     	; 0x36 <__bad_interrupt>
-  20:	0a c0       	rjmp	.+20     	; 0x36 <__bad_interrupt>
-  22:	09 c0       	rjmp	.+18     	; 0x36 <__bad_interrupt>
-  24:	08 c0       	rjmp	.+16     	; 0x36 <__bad_interrupt>
+   0:	22 c0       	rjmp	.+68     	; 0x46 <__ctors_end>
+   2:	31 c0       	rjmp	.+98     	; 0x66 <__bad_interrupt>
+   4:	30 c0       	rjmp	.+96     	; 0x66 <__bad_interrupt>
+   6:	2f c0       	rjmp	.+94     	; 0x66 <__bad_interrupt>
+   8:	2e c0       	rjmp	.+92     	; 0x66 <__bad_interrupt>
+   a:	2d c0       	rjmp	.+90     	; 0x66 <__bad_interrupt>
+   c:	2c c0       	rjmp	.+88     	; 0x66 <__bad_interrupt>
+   e:	2b c0       	rjmp	.+86     	; 0x66 <__bad_interrupt>
+  10:	2a c0       	rjmp	.+84     	; 0x66 <__bad_interrupt>
+  12:	29 c0       	rjmp	.+82     	; 0x66 <__bad_interrupt>
+  14:	28 c0       	rjmp	.+80     	; 0x66 <__bad_interrupt>
+  16:	27 c0       	rjmp	.+78     	; 0x66 <__bad_interrupt>
+  18:	26 c0       	rjmp	.+76     	; 0x66 <__bad_interrupt>
+  1a:	25 c0       	rjmp	.+74     	; 0x66 <__bad_interrupt>
+  1c:	24 c0       	rjmp	.+72     	; 0x66 <__bad_interrupt>
+  1e:	23 c0       	rjmp	.+70     	; 0x66 <__bad_interrupt>
+  20:	22 c0       	rjmp	.+68     	; 0x66 <__bad_interrupt>
+  22:	21 c0       	rjmp	.+66     	; 0x66 <__bad_interrupt>
+  24:	20 c0       	rjmp	.+64     	; 0x66 <__bad_interrupt>
+  26:	5e c0       	rjmp	.+188    	; 0xe4 <main+0x32>
+  28:	60 c0       	rjmp	.+192    	; 0xea <main+0x38>
+  2a:	61 c0       	rjmp	.+194    	; 0xee <main+0x3c>
+  2c:	62 c0       	rjmp	.+196    	; 0xf2 <main+0x40>
+  2e:	65 c0       	rjmp	.+202    	; 0xfa <main+0x48>
+  30:	66 c0       	rjmp	.+204    	; 0xfe <main+0x4c>
+  32:	69 c0       	rjmp	.+210    	; 0x106 <main+0x54>
+  34:	6c c0       	rjmp	.+216    	; 0x10e <main+0x5c>
+  36:	6f c0       	rjmp	.+222    	; 0x116 <main+0x64>
+  38:	70 c0       	rjmp	.+224    	; 0x11a <main+0x68>
+  3a:	73 c0       	rjmp	.+230    	; 0x122 <main+0x70>
+  3c:	76 c0       	rjmp	.+236    	; 0x12a <main+0x78>
+  3e:	79 c0       	rjmp	.+242    	; 0x132 <main+0x80>
+  40:	7c c0       	rjmp	.+248    	; 0x13a <main+0x88>
+  42:	7f c0       	rjmp	.+254    	; 0x142 <main+0x90>
+  44:	82 c0       	rjmp	.+260    	; 0x14a <main+0x98>
 
-00000026 <__ctors_end>:
-  26:	11 24       	eor	r1, r1
-  28:	1f be       	out	0x3f, r1	; 63
-  2a:	cf e5       	ldi	r28, 0x5F	; 95
-  2c:	d4 e0       	ldi	r29, 0x04	; 4
-  2e:	de bf       	out	0x3e, r29	; 62
-  30:	cd bf       	out	0x3d, r28	; 61
-  32:	02 d0       	rcall	.+4      	; 0x38 <main>
-  34:	02 c0       	rjmp	.+4      	; 0x3a <_exit>
+00000046 <__ctors_end>:
+  46:	11 24       	eor	r1, r1
+  48:	1f be       	out	0x3f, r1	; 63
+  4a:	cf e5       	ldi	r28, 0x5F	; 95
+  4c:	d4 e0       	ldi	r29, 0x04	; 4
+  4e:	de bf       	out	0x3e, r29	; 62
+  50:	cd bf       	out	0x3d, r28	; 61
 
-00000036 <__bad_interrupt>:
-  36:	e4 cf       	rjmp	.-56     	; 0x0 <__vectors>
+00000052 <__do_clear_bss>:
+  52:	20 e0       	ldi	r18, 0x00	; 0
+  54:	a0 e6       	ldi	r26, 0x60	; 96
+  56:	b0 e0       	ldi	r27, 0x00	; 0
+  58:	01 c0       	rjmp	.+2      	; 0x5c <.do_clear_bss_start>
 
-00000038 <main>:
-#define F_CPU 16000000UL
+0000005a <.do_clear_bss_loop>:
+  5a:	1d 92       	st	X+, r1
 
-#include <avr/io.h>
+0000005c <.do_clear_bss_start>:
+  5c:	a3 36       	cpi	r26, 0x63	; 99
+  5e:	b2 07       	cpc	r27, r18
+  60:	e1 f7       	brne	.-8      	; 0x5a <.do_clear_bss_loop>
+  62:	27 d0       	rcall	.+78     	; 0xb2 <main>
+  64:	7f c0       	rjmp	.+254    	; 0x164 <_exit>
+
+00000066 <__bad_interrupt>:
+  66:	cc cf       	rjmp	.-104    	; 0x0 <__vectors>
+
+00000068 <encoder>:
+}
+
+void encoder(){
+	static uint8_t new_state = 0;			//Новое состояние ножек энкодера
+	static uint8_t old_state = 0;			//Старое состояние ножек энкодера (значения хранятся в младших битах)
+	new_state = (PIND & 0b00000011);		//Читаем состояние битов, сдвигаем их в младшие разряды и присваиваем старому состоянию
+  68:	20 b3       	in	r18, 0x10	; 16
+  6a:	23 70       	andi	r18, 0x03	; 3
+  6c:	20 93 61 00 	sts	0x0061, r18
+	
+	switch (new_state << 6 | old_state)
+  70:	30 e4       	ldi	r19, 0x40	; 64
+  72:	23 9f       	mul	r18, r19
+  74:	c0 01       	movw	r24, r0
+  76:	11 24       	eor	r1, r1
+  78:	30 91 60 00 	lds	r19, 0x0060
+  7c:	83 2b       	or	r24, r19
+  7e:	81 30       	cpi	r24, 0x01	; 1
+  80:	91 05       	cpc	r25, r1
+  82:	19 f0       	breq	.+6      	; 0x8a <encoder+0x22>
+  84:	04 97       	sbiw	r24, 0x04	; 4
+  86:	39 f0       	breq	.+14     	; 0x96 <encoder+0x2e>
+  88:	0b c0       	rjmp	.+22     	; 0xa0 <encoder+0x38>
+	{
+		case 0x01:  count++;						//Энкодер вправо
+  8a:	80 91 62 00 	lds	r24, 0x0062
+  8e:	8f 5f       	subi	r24, 0xFF	; 255
+  90:	80 93 62 00 	sts	0x0062, r24
+			break;
+  94:	05 c0       	rjmp	.+10     	; 0xa0 <encoder+0x38>
+		
+		case 0x04:  count--;						//Энкодер влево
+  96:	80 91 62 00 	lds	r24, 0x0062
+  9a:	81 50       	subi	r24, 0x01	; 1
+  9c:	80 93 62 00 	sts	0x0062, r24
+			break;
+	}
+	
+	if(count > 127) count = 0;
+  a0:	80 91 62 00 	lds	r24, 0x0062
+  a4:	88 23       	and	r24, r24
+  a6:	14 f4       	brge	.+4      	; 0xac <encoder+0x44>
+  a8:	10 92 62 00 	sts	0x0062, r1
+	
+	old_state = new_state;
+  ac:	20 93 60 00 	sts	0x0060, r18
+  b0:	08 95       	ret
+
+000000b2 <main>:
+void encoder();
 
 int main(void)
 {
-  38:	ff cf       	rjmp	.-2      	; 0x38 <main>
+	//Настройка портов
+	DDRD &= (~(1 << Encoder2) | (1 << Encoder1));													//Входы для энкодера
+  b2:	8f 98       	cbi	0x11, 7	; 17
+	DDRD |= (1 << Address3) | (1 << Address2) | (1 << Address1) | (1 << Address0);					//Выходы для установки адреса мультиплексоров
+  b4:	81 b3       	in	r24, 0x11	; 17
+  b6:	8c 63       	ori	r24, 0x3C	; 60
+  b8:	81 bb       	out	0x11, r24	; 17
+	PORTD &= ~((1 << Address3) | (1 << Address2) | (1 << Address1) | (1 << Address0));				//Выходы для установки адреса мультиплексоров
+  ba:	82 b3       	in	r24, 0x12	; 18
+  bc:	83 7c       	andi	r24, 0xC3	; 195
+  be:	82 bb       	out	0x12, r24	; 18
+	DDRB &= ~((1 <<But1) | (1 << But2) | (1 << But3) | (1 << Enc_but) | (1 << Out6) | (1 << Out5));	//Входы для кнопок и левой половины
+  c0:	87 b3       	in	r24, 0x17	; 23
+  c2:	80 7c       	andi	r24, 0xC0	; 192
+  c4:	87 bb       	out	0x17, r24	; 23
+	
+	
+    while(1)
+    {
+        for (uint8_t i = 0; i < 16; i++)		//Переключаем адреса входов с 0 по 15 на 6-ти мультиплексорах
+  c6:	c0 e0       	ldi	r28, 0x00	; 0
+  c8:	d0 e0       	ldi	r29, 0x00	; 0
+  ca:	44 c0       	rjmp	.+136    	; 0x154 <main+0xa2>
+        {
+			PORTD &= ~((1 << Address3) | (1 << Address2) | (1 << Address1) | (1 << Address0));	//Сброс адреса
+  cc:	82 b3       	in	r24, 0x12	; 18
+  ce:	83 7c       	andi	r24, 0xC3	; 195
+  d0:	82 bb       	out	0x12, r24	; 18
+			
+			switch(i)
+  d2:	8c 2f       	mov	r24, r28
+  d4:	90 e0       	ldi	r25, 0x00	; 0
+  d6:	80 31       	cpi	r24, 0x10	; 16
+  d8:	91 05       	cpc	r25, r1
+  da:	d0 f5       	brcc	.+116    	; 0x150 <main+0x9e>
+  dc:	fc 01       	movw	r30, r24
+  de:	ed 5e       	subi	r30, 0xED	; 237
+  e0:	ff 4f       	sbci	r31, 0xFF	; 255
+  e2:	09 94       	ijmp
+			{
+				case 0:		PORTD |= 0b00000000;	
+  e4:	82 b3       	in	r24, 0x12	; 18
+  e6:	82 bb       	out	0x12, r24	; 18
+							//if(PINC & Out1) send_note(_C);
+					break;
+  e8:	33 c0       	rjmp	.+102    	; 0x150 <main+0x9e>
+					
+				case 1:		PORTD |= 0b00000100;
+  ea:	92 9a       	sbi	0x12, 2	; 18
+							
+					break;
+  ec:	31 c0       	rjmp	.+98     	; 0x150 <main+0x9e>
+					
+				case 2:		PORTD |= 0b00001000;
+  ee:	93 9a       	sbi	0x12, 3	; 18
+				
+					break;
+  f0:	2f c0       	rjmp	.+94     	; 0x150 <main+0x9e>
+					
+				case 3:		PORTD |= 0b00001100;
+  f2:	82 b3       	in	r24, 0x12	; 18
+  f4:	8c 60       	ori	r24, 0x0C	; 12
+  f6:	82 bb       	out	0x12, r24	; 18
+				
+					break;
+  f8:	2b c0       	rjmp	.+86     	; 0x150 <main+0x9e>
+					
+				case 4:		PORTD |= 0b00010000;
+  fa:	94 9a       	sbi	0x12, 4	; 18
+				
+					break;
+  fc:	29 c0       	rjmp	.+82     	; 0x150 <main+0x9e>
+					
+				case 5:		PORTD |= 0b00010100;
+  fe:	82 b3       	in	r24, 0x12	; 18
+ 100:	84 61       	ori	r24, 0x14	; 20
+ 102:	82 bb       	out	0x12, r24	; 18
+				
+					break;
+ 104:	25 c0       	rjmp	.+74     	; 0x150 <main+0x9e>
+					
+				case 6:		PORTD |= 0b00011000;																
+ 106:	82 b3       	in	r24, 0x12	; 18
+ 108:	88 61       	ori	r24, 0x18	; 24
+ 10a:	82 bb       	out	0x12, r24	; 18
+				
+					break;
+ 10c:	21 c0       	rjmp	.+66     	; 0x150 <main+0x9e>
+					
+				case 7:		PORTD |= 0b00011100;
+ 10e:	82 b3       	in	r24, 0x12	; 18
+ 110:	8c 61       	ori	r24, 0x1C	; 28
+ 112:	82 bb       	out	0x12, r24	; 18
+					
+					break;
+ 114:	1d c0       	rjmp	.+58     	; 0x150 <main+0x9e>
+					
+				case 8:		PORTD |= 0b00100000;
+ 116:	95 9a       	sbi	0x12, 5	; 18
+					
+					break;
+ 118:	1b c0       	rjmp	.+54     	; 0x150 <main+0x9e>
+					
+				case 9:		PORTD |= 0b00100100;
+ 11a:	82 b3       	in	r24, 0x12	; 18
+ 11c:	84 62       	ori	r24, 0x24	; 36
+ 11e:	82 bb       	out	0x12, r24	; 18
+					
+					break;
+ 120:	17 c0       	rjmp	.+46     	; 0x150 <main+0x9e>
+					
+				case 10:	PORTD |= 0b00101000;
+ 122:	82 b3       	in	r24, 0x12	; 18
+ 124:	88 62       	ori	r24, 0x28	; 40
+ 126:	82 bb       	out	0x12, r24	; 18
+					
+					break;
+ 128:	13 c0       	rjmp	.+38     	; 0x150 <main+0x9e>
+					
+				case 11:	PORTD |= 0b0010110;
+ 12a:	82 b3       	in	r24, 0x12	; 18
+ 12c:	86 61       	ori	r24, 0x16	; 22
+ 12e:	82 bb       	out	0x12, r24	; 18
+					
+					break;
+ 130:	0f c0       	rjmp	.+30     	; 0x150 <main+0x9e>
+					
+				case 12:	PORTD |= 0b00110000;
+ 132:	82 b3       	in	r24, 0x12	; 18
+ 134:	80 63       	ori	r24, 0x30	; 48
+ 136:	82 bb       	out	0x12, r24	; 18
+					
+					break;
+ 138:	0b c0       	rjmp	.+22     	; 0x150 <main+0x9e>
+					
+				case 13:	PORTD |= 0b00110100;
+ 13a:	82 b3       	in	r24, 0x12	; 18
+ 13c:	84 63       	ori	r24, 0x34	; 52
+ 13e:	82 bb       	out	0x12, r24	; 18
+					
+					break;
+ 140:	07 c0       	rjmp	.+14     	; 0x150 <main+0x9e>
+					
+				case 14:	PORTD |= 0b00111000;
+ 142:	82 b3       	in	r24, 0x12	; 18
+ 144:	88 63       	ori	r24, 0x38	; 56
+ 146:	82 bb       	out	0x12, r24	; 18
+					
+					break;
+ 148:	03 c0       	rjmp	.+6      	; 0x150 <main+0x9e>
+					
+				case 15:	PORTD |= 0b00111100;
+ 14a:	82 b3       	in	r24, 0x12	; 18
+ 14c:	8c 63       	ori	r24, 0x3C	; 60
+ 14e:	82 bb       	out	0x12, r24	; 18
+					
+					break;
+				
+			}
+			
+			encoder();
+ 150:	8b df       	rcall	.-234    	; 0x68 <encoder>
+	DDRB &= ~((1 <<But1) | (1 << But2) | (1 << But3) | (1 << Enc_but) | (1 << Out6) | (1 << Out5));	//Входы для кнопок и левой половины
+	
+	
+    while(1)
+    {
+        for (uint8_t i = 0; i < 16; i++)		//Переключаем адреса входов с 0 по 15 на 6-ти мультиплексорах
+ 152:	cf 5f       	subi	r28, 0xFF	; 255
+ 154:	c0 31       	cpi	r28, 0x10	; 16
+ 156:	08 f4       	brcc	.+2      	; 0x15a <main+0xa8>
+ 158:	b9 cf       	rjmp	.-142    	; 0xcc <main+0x1a>
+        {
+			PORTD &= ~((1 << Address3) | (1 << Address2) | (1 << Address1) | (1 << Address0));	//Сброс адреса
+ 15a:	82 b3       	in	r24, 0x12	; 18
+ 15c:	83 7c       	andi	r24, 0xC3	; 195
+ 15e:	82 bb       	out	0x12, r24	; 18
+	DDRB &= ~((1 <<But1) | (1 << But2) | (1 << But3) | (1 << Enc_but) | (1 << Out6) | (1 << Out5));	//Входы для кнопок и левой половины
+	
+	
+    while(1)
+    {
+        for (uint8_t i = 0; i < 16; i++)		//Переключаем адреса входов с 0 по 15 на 6-ти мультиплексорах
+ 160:	cd 2f       	mov	r28, r29
+ 162:	c0 cf       	rjmp	.-128    	; 0xe4 <main+0x32>
 
-0000003a <_exit>:
-  3a:	f8 94       	cli
+00000164 <_exit>:
+ 164:	f8 94       	cli
 
-0000003c <__stop_program>:
-  3c:	ff cf       	rjmp	.-2      	; 0x3c <__stop_program>
+00000166 <__stop_program>:
+ 166:	ff cf       	rjmp	.-2      	; 0x166 <__stop_program>

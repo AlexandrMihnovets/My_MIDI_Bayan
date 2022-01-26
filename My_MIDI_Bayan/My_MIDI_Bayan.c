@@ -111,26 +111,33 @@ int main(void)
 				
 			}
 			
-			encoder();
+			encoder();		//Опрашиваем энкодер
         }
     }
 }
 
 void encoder(){
 	static uint8_t new_state = 0;			//Новое состояние ножек энкодера
-	static uint8_t old_state = 0;			//Старое состояние ножек энкодера (значения хранятся в младших битах)
-	new_state = (PIND & 0b00000011);		//Читаем состояние битов, сдвигаем их в младшие разряды и присваиваем старому состоянию
+	static uint8_t old_state = 0;			//Старое состояние ножек энкодера
 	
-	switch (new_state << 6 | old_state)
+	new_state = (PIND & 0b11000000) >> 2;	//Читаем состояние битов энкодера, сдвигаем на два вправо и присваиваем переменной
+	
+	switch (old_state | new_state)			//Склеиваем две переменные. В рещультате получится число, по которому определяем направление вращения
 	{
-		case 0x01:  count++;						//Энкодер вправо
+		case 0xd0:  
+		case 0x40: 
+		case 0x20:
+		case 0xb0:	count++;				//Энкодер вправо
 			break;
 		
-		case 0x04:  count--;						//Энкодер влево
+		case 0xe0:  
+		case 0x70: 
+		case 0x10:
+		case 0x80:	count--;				//Энкодер влево
 			break;
 	}
 	
-	if(count > 127) count = 0;
+	if(count > 127) count = 0;				//В MIDI 127 - магическое число (127 инструментов, например)
 	
-	old_state = new_state;
+	old_state = new_state << 2;
 }

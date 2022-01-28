@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "My_MIDI_Bayan", "My_MIDI_Bayan\My_MIDI_Bayan_6_2.cproj", "{185F3DB9-1167-45BD-A495-0C824CE5C1C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{185F3DB9-1167-45BD-A495-0C824CE5C1C5}.Debug|AVR.ActiveCfg = Debug|AVR
+		{185F3DB9-1167-45BD-A495-0C824CE5C1C5}.Debug|AVR.Build.0 = Debug|AVR
+		{185F3DB9-1167-45BD-A495-0C824CE5C1C5}.Release|AVR.ActiveCfg = Release|AVR
+		{185F3DB9-1167-45BD-A495-0C824CE5C1C5}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

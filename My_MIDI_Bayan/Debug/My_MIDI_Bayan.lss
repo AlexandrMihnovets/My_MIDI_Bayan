@@ -3,27 +3,31 @@ My_MIDI_Bayan.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000018c  00000000  00000000  00000074  2**1
+  0 .text         0000049c  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .bss          00000003  00800060  00800060  00000200  2**0
+  1 .data         00000000  00800060  00800060  00000510  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000002  00800060  00800060  00000510  2**0
                   ALLOC
-  2 .comment      00000030  00000000  00000000  00000200  2**0
+  3 .comment      00000030  00000000  00000000  00000510  2**0
                   CONTENTS, READONLY
-  3 .debug_aranges 00000028  00000000  00000000  00000230  2**0
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000540  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000038  00000000  00000000  0000057c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_info   000000fa  00000000  00000000  00000258  2**0
+  6 .debug_info   00000d7d  00000000  00000000  000005b4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_abbrev 000000b0  00000000  00000000  00000352  2**0
+  7 .debug_abbrev 0000056a  00000000  00000000  00001331  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_line   00000105  00000000  00000000  00000402  2**0
+  8 .debug_line   000009c8  00000000  00000000  0000189b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_frame  00000034  00000000  00000000  00000508  2**2
+  9 .debug_frame  00000054  00000000  00000000  00002264  2**2
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_str    00000149  00000000  00000000  0000053c  2**0
+ 10 .debug_str    000002ef  00000000  00000000  000022b8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_loc    00000127  00000000  00000000  00000685  2**0
+ 11 .debug_loc    000001f1  00000000  00000000  000025a7  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_ranges 00000018  00000000  00000000  000007ac  2**0
+ 12 .debug_ranges 00000028  00000000  00000000  00002798  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -48,22 +52,22 @@ Disassembly of section .text:
   20:	22 c0       	rjmp	.+68     	; 0x66 <__bad_interrupt>
   22:	21 c0       	rjmp	.+66     	; 0x66 <__bad_interrupt>
   24:	20 c0       	rjmp	.+64     	; 0x66 <__bad_interrupt>
-  26:	70 c0       	rjmp	.+224    	; 0x108 <main+0x32>
-  28:	72 c0       	rjmp	.+228    	; 0x10e <main+0x38>
-  2a:	73 c0       	rjmp	.+230    	; 0x112 <main+0x3c>
-  2c:	74 c0       	rjmp	.+232    	; 0x116 <main+0x40>
-  2e:	77 c0       	rjmp	.+238    	; 0x11e <main+0x48>
-  30:	78 c0       	rjmp	.+240    	; 0x122 <main+0x4c>
-  32:	7b c0       	rjmp	.+246    	; 0x12a <main+0x54>
-  34:	7e c0       	rjmp	.+252    	; 0x132 <main+0x5c>
-  36:	81 c0       	rjmp	.+258    	; 0x13a <main+0x64>
-  38:	82 c0       	rjmp	.+260    	; 0x13e <main+0x68>
-  3a:	85 c0       	rjmp	.+266    	; 0x146 <main+0x70>
-  3c:	88 c0       	rjmp	.+272    	; 0x14e <main+0x78>
-  3e:	8b c0       	rjmp	.+278    	; 0x156 <main+0x80>
-  40:	8e c0       	rjmp	.+284    	; 0x15e <main+0x88>
-  42:	91 c0       	rjmp	.+290    	; 0x166 <main+0x90>
-  44:	94 c0       	rjmp	.+296    	; 0x16e <main+0x98>
+  26:	6f c0       	rjmp	.+222    	; 0x106 <main+0x3a>
+  28:	89 c0       	rjmp	.+274    	; 0x13c <main+0x70>
+  2a:	a2 c0       	rjmp	.+324    	; 0x170 <main+0xa4>
+  2c:	bb c0       	rjmp	.+374    	; 0x1a4 <main+0xd8>
+  2e:	d6 c0       	rjmp	.+428    	; 0x1dc <main+0x110>
+  30:	ef c0       	rjmp	.+478    	; 0x210 <__EEPROM_REGION_LENGTH__+0x10>
+  32:	0a c1       	rjmp	.+532    	; 0x248 <__EEPROM_REGION_LENGTH__+0x48>
+  34:	25 c1       	rjmp	.+586    	; 0x280 <__EEPROM_REGION_LENGTH__+0x80>
+  36:	40 c1       	rjmp	.+640    	; 0x2b8 <__EEPROM_REGION_LENGTH__+0xb8>
+  38:	59 c1       	rjmp	.+690    	; 0x2ec <__EEPROM_REGION_LENGTH__+0xec>
+  3a:	74 c1       	rjmp	.+744    	; 0x324 <__EEPROM_REGION_LENGTH__+0x124>
+  3c:	8f c1       	rjmp	.+798    	; 0x35c <__EEPROM_REGION_LENGTH__+0x15c>
+  3e:	aa c1       	rjmp	.+852    	; 0x394 <__EEPROM_REGION_LENGTH__+0x194>
+  40:	c5 c1       	rjmp	.+906    	; 0x3cc <__EEPROM_REGION_LENGTH__+0x1cc>
+  42:	e0 c1       	rjmp	.+960    	; 0x404 <__DATA_REGION_LENGTH__+0x4>
+  44:	fb c1       	rjmp	.+1014   	; 0x43c <__DATA_REGION_LENGTH__+0x3c>
 
 00000046 <__ctors_end>:
   46:	11 24       	eor	r1, r1
@@ -83,18 +87,18 @@ Disassembly of section .text:
   5a:	1d 92       	st	X+, r1
 
 0000005c <.do_clear_bss_start>:
-  5c:	a3 36       	cpi	r26, 0x63	; 99
+  5c:	a2 36       	cpi	r26, 0x62	; 98
   5e:	b2 07       	cpc	r27, r18
   60:	e1 f7       	brne	.-8      	; 0x5a <.do_clear_bss_loop>
-  62:	39 d0       	rcall	.+114    	; 0xd6 <main>
-  64:	91 c0       	rjmp	.+290    	; 0x188 <_exit>
+  62:	34 d0       	rcall	.+104    	; 0xcc <main>
+  64:	19 c2       	rjmp	.+1074   	; 0x498 <_exit>
 
 00000066 <__bad_interrupt>:
   66:	cc cf       	rjmp	.-104    	; 0x0 <__vectors>
 
 00000068 <encoder>:
-
-void encoder(){
+void encoder()
+{	
 	static uint8_t new_state = 0;			//Новое состояние ножек энкодера
 	static uint8_t old_state = 0;			//Старое состояние ножек энкодера
 	
@@ -106,258 +110,763 @@ void encoder(){
   70:	87 95       	ror	r24
   72:	95 95       	asr	r25
   74:	87 95       	ror	r24
-  76:	80 93 61 00 	sts	0x0061, r24
 	
 	switch (old_state | new_state)			//Склеиваем две переменные. В рещультате получится число, по которому определяем направление вращения
-  7a:	20 91 60 00 	lds	r18, 0x0060
-  7e:	28 2b       	or	r18, r24
-  80:	20 37       	cpi	r18, 0x70	; 112
-  82:	c9 f0       	breq	.+50     	; 0xb6 <encoder+0x4e>
-  84:	38 f4       	brcc	.+14     	; 0x94 <encoder+0x2c>
-  86:	20 32       	cpi	r18, 0x20	; 32
-  88:	81 f0       	breq	.+32     	; 0xaa <encoder+0x42>
-  8a:	20 34       	cpi	r18, 0x40	; 64
-  8c:	71 f0       	breq	.+28     	; 0xaa <encoder+0x42>
-  8e:	20 31       	cpi	r18, 0x10	; 16
-  90:	b9 f4       	brne	.+46     	; 0xc0 <encoder+0x58>
-  92:	11 c0       	rjmp	.+34     	; 0xb6 <encoder+0x4e>
-  94:	20 3b       	cpi	r18, 0xB0	; 176
-  96:	49 f0       	breq	.+18     	; 0xaa <encoder+0x42>
-  98:	18 f4       	brcc	.+6      	; 0xa0 <encoder+0x38>
-  9a:	20 38       	cpi	r18, 0x80	; 128
-  9c:	61 f0       	breq	.+24     	; 0xb6 <encoder+0x4e>
-  9e:	10 c0       	rjmp	.+32     	; 0xc0 <encoder+0x58>
-  a0:	20 3d       	cpi	r18, 0xD0	; 208
-  a2:	19 f0       	breq	.+6      	; 0xaa <encoder+0x42>
-  a4:	20 3e       	cpi	r18, 0xE0	; 224
-  a6:	39 f0       	breq	.+14     	; 0xb6 <encoder+0x4e>
-  a8:	0b c0       	rjmp	.+22     	; 0xc0 <encoder+0x58>
+  76:	20 91 60 00 	lds	r18, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+  7a:	28 2b       	or	r18, r24
+  7c:	20 3d       	cpi	r18, 0xD0	; 208
+  7e:	19 f0       	breq	.+6      	; 0x86 <encoder+0x1e>
+  80:	20 3e       	cpi	r18, 0xE0	; 224
+  82:	39 f0       	breq	.+14     	; 0x92 <encoder+0x2a>
+  84:	0b c0       	rjmp	.+22     	; 0x9c <encoder+0x34>
 	{
-		case 0xd0:  
-		case 0x40: 
-		case 0x20:
-		case 0xb0:	count++;				//Энкодер вправо
-  aa:	20 91 62 00 	lds	r18, 0x0062
-  ae:	2f 5f       	subi	r18, 0xFF	; 255
-  b0:	20 93 62 00 	sts	0x0062, r18
+		case 0xd0:	count++;				//Энкодер вправо
+  86:	20 91 61 00 	lds	r18, 0x0061	; 0x800061 <count>
+  8a:	2f 5f       	subi	r18, 0xFF	; 255
+  8c:	20 93 61 00 	sts	0x0061, r18	; 0x800061 <count>
 			break;
-  b4:	05 c0       	rjmp	.+10     	; 0xc0 <encoder+0x58>
+  90:	05 c0       	rjmp	.+10     	; 0x9c <encoder+0x34>
 		
-		case 0xe0:  
-		case 0x70: 
-		case 0x10:
-		case 0x80:	count--;				//Энкодер влево
-  b6:	20 91 62 00 	lds	r18, 0x0062
-  ba:	21 50       	subi	r18, 0x01	; 1
-  bc:	20 93 62 00 	sts	0x0062, r18
+		case 0xe0:	count--;				//Энкодер влево
+  92:	20 91 61 00 	lds	r18, 0x0061	; 0x800061 <count>
+  96:	21 50       	subi	r18, 0x01	; 1
+  98:	20 93 61 00 	sts	0x0061, r18	; 0x800061 <count>
 			break;
 	}
 	
-	if(count > 127) count = 0;				//В MIDI 127 - магическое число (127 инструментов, например)
-  c0:	20 91 62 00 	lds	r18, 0x0062
-  c4:	22 23       	and	r18, r18
-  c6:	14 f4       	brge	.+4      	; 0xcc <encoder+0x64>
-  c8:	10 92 62 00 	sts	0x0062, r1
+	if(count > 127) count = 127;			//В MIDI 127 - магическое число (127 инструментов, например)
+  9c:	20 91 61 00 	lds	r18, 0x0061	; 0x800061 <count>
+  a0:	22 23       	and	r18, r18
+  a2:	1c f4       	brge	.+6      	; 0xaa <encoder+0x42>
+  a4:	2f e7       	ldi	r18, 0x7F	; 127
+  a6:	20 93 61 00 	sts	0x0061, r18	; 0x800061 <count>
 	
 	old_state = new_state << 2;
-  cc:	88 0f       	add	r24, r24
-  ce:	88 0f       	add	r24, r24
-  d0:	80 93 60 00 	sts	0x0060, r24
-  d4:	08 95       	ret
+  aa:	88 0f       	add	r24, r24
+  ac:	88 0f       	add	r24, r24
+  ae:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+  b2:	08 95       	ret
 
-000000d6 <main>:
-void encoder();
+000000b4 <UART_ini>:
+}
+
+void UART_ini(void)
+{
+	// UBRR = F_CPU/(16*31250)-1=31 - это скорость работы UART
+	UBRRH = 0;
+  b4:	10 bc       	out	0x20, r1	; 32
+	UBRRL = 31;
+  b6:	8f e1       	ldi	r24, 0x1F	; 31
+  b8:	89 b9       	out	0x09, r24	; 9
+	
+	UCSRB |= (1 << TXEN);					//Разрешаем передачу
+  ba:	53 9a       	sbi	0x0a, 3	; 10
+	UCSRC |= (1 << UCSZ1) | (1 << UCSZ0);	//8-bit, none, 1
+  bc:	80 b5       	in	r24, 0x20	; 32
+  be:	86 60       	ori	r24, 0x06	; 6
+  c0:	80 bd       	out	0x20, r24	; 32
+  c2:	08 95       	ret
+
+000000c4 <UART_send>:
+}
+
+void UART_send(unsigned char c)				//Отправка байта
+{
+	while(!(UCSRA & (1 << UDRE)))			//Устанавливается, когда регистр свободен
+  c4:	5d 9b       	sbis	0x0b, 5	; 11
+  c6:	fe cf       	rjmp	.-4      	; 0xc4 <UART_send>
+	{
+		//UDRE = 0b00100000
+	}
+	
+	UDR = c;
+  c8:	8c b9       	out	0x0c, r24	; 12
+  ca:	08 95       	ret
+
+000000cc <main>:
+void UART_send(unsigned char c);
 
 int main(void)
 {
 	//Настройка портов
 	DDRD &= (~(1 << Encoder2) | (1 << Encoder1));													//Входы для энкодера
-  d6:	8f 98       	cbi	0x11, 7	; 17
+  cc:	8f 98       	cbi	0x11, 7	; 17
 	DDRD |= (1 << Address3) | (1 << Address2) | (1 << Address1) | (1 << Address0);					//Выходы для установки адреса мультиплексоров
-  d8:	81 b3       	in	r24, 0x11	; 17
-  da:	8c 63       	ori	r24, 0x3C	; 60
-  dc:	81 bb       	out	0x11, r24	; 17
+  ce:	81 b3       	in	r24, 0x11	; 17
+  d0:	8c 63       	ori	r24, 0x3C	; 60
+  d2:	81 bb       	out	0x11, r24	; 17
 	PORTD &= ~((1 << Address3) | (1 << Address2) | (1 << Address1) | (1 << Address0));				//Выходы для установки адреса мультиплексоров
-  de:	82 b3       	in	r24, 0x12	; 18
-  e0:	83 7c       	andi	r24, 0xC3	; 195
-  e2:	82 bb       	out	0x12, r24	; 18
+  d4:	82 b3       	in	r24, 0x12	; 18
+  d6:	83 7c       	andi	r24, 0xC3	; 195
+  d8:	82 bb       	out	0x12, r24	; 18
 	DDRB &= ~((1 <<But1) | (1 << But2) | (1 << But3) | (1 << Enc_but) | (1 << Out6) | (1 << Out5));	//Входы для кнопок и левой половины
-  e4:	87 b3       	in	r24, 0x17	; 23
-  e6:	80 7c       	andi	r24, 0xC0	; 192
-  e8:	87 bb       	out	0x17, r24	; 23
+  da:	87 b3       	in	r24, 0x17	; 23
+  dc:	80 7c       	andi	r24, 0xC0	; 192
+  de:	87 bb       	out	0x17, r24	; 23
 	
+	UART_ini();
+  e0:	e9 df       	rcall	.-46     	; 0xb4 <UART_ini>
+void UART_ini(void);
+
+void UART_send(unsigned char c);
+
+int main(void)
+{
+  e2:	c1 e0       	ldi	r28, 0x01	; 1
+  e4:	01 c0       	rjmp	.+2      	; 0xe8 <main+0x1c>
+  e6:	cf 5f       	subi	r28, 0xFF	; 255
 	
     while(1)
     {
         for (uint8_t i = 0; i < 16; i++)		//Переключаем адреса входов с 0 по 15 на 6-ти мультиплексорах
-  ea:	c0 e0       	ldi	r28, 0x00	; 0
-  ec:	d0 e0       	ldi	r29, 0x00	; 0
-  ee:	44 c0       	rjmp	.+136    	; 0x178 <main+0xa2>
         {
 			PORTD &= ~((1 << Address3) | (1 << Address2) | (1 << Address1) | (1 << Address0));	//Сброс адреса
-  f0:	82 b3       	in	r24, 0x12	; 18
-  f2:	83 7c       	andi	r24, 0xC3	; 195
-  f4:	82 bb       	out	0x12, r24	; 18
+  e8:	82 b3       	in	r24, 0x12	; 18
+  ea:	83 7c       	andi	r24, 0xC3	; 195
+  ec:	82 bb       	out	0x12, r24	; 18
 			
 			switch(i)
-  f6:	8c 2f       	mov	r24, r28
-  f8:	90 e0       	ldi	r25, 0x00	; 0
-  fa:	80 31       	cpi	r24, 0x10	; 16
-  fc:	91 05       	cpc	r25, r1
-  fe:	d0 f5       	brcc	.+116    	; 0x174 <main+0x9e>
- 100:	fc 01       	movw	r30, r24
- 102:	ed 5e       	subi	r30, 0xED	; 237
- 104:	ff 4f       	sbci	r31, 0xFF	; 255
- 106:	09 94       	ijmp
+  ee:	ef ef       	ldi	r30, 0xFF	; 255
+  f0:	ec 0f       	add	r30, r28
+  f2:	8e 2f       	mov	r24, r30
+  f4:	90 e0       	ldi	r25, 0x00	; 0
+  f6:	80 31       	cpi	r24, 0x10	; 16
+  f8:	91 05       	cpc	r25, r1
+  fa:	08 f0       	brcs	.+2      	; 0xfe <main+0x32>
+  fc:	bb c1       	rjmp	.+886    	; 0x474 <__stack+0x15>
+  fe:	fc 01       	movw	r30, r24
+ 100:	ed 5e       	subi	r30, 0xED	; 237
+ 102:	ff 4f       	sbci	r31, 0xFF	; 255
+ 104:	09 94       	ijmp
 			{
 				case 0:		PORTD |= 0b00000000;	
- 108:	82 b3       	in	r24, 0x12	; 18
- 10a:	82 bb       	out	0x12, r24	; 18
-							//if(PINC & Out1) send_note(_C);
+ 106:	82 b3       	in	r24, 0x12	; 18
+ 108:	82 bb       	out	0x12, r24	; 18
+							if(!(PINC & _BV(Out1))) UART_send('a');
+ 10a:	98 99       	sbic	0x13, 0	; 19
+ 10c:	02 c0       	rjmp	.+4      	; 0x112 <main+0x46>
+ 10e:	81 e6       	ldi	r24, 0x61	; 97
+ 110:	d9 df       	rcall	.-78     	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('b') ;
+ 112:	99 99       	sbic	0x13, 1	; 19
+ 114:	02 c0       	rjmp	.+4      	; 0x11a <main+0x4e>
+ 116:	82 e6       	ldi	r24, 0x62	; 98
+ 118:	d5 df       	rcall	.-86     	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('c') ;
+ 11a:	9a 99       	sbic	0x13, 2	; 19
+ 11c:	02 c0       	rjmp	.+4      	; 0x122 <main+0x56>
+ 11e:	83 e6       	ldi	r24, 0x63	; 99
+ 120:	d1 df       	rcall	.-94     	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('d') ;
+ 122:	9b 99       	sbic	0x13, 3	; 19
+ 124:	02 c0       	rjmp	.+4      	; 0x12a <main+0x5e>
+ 126:	84 e6       	ldi	r24, 0x64	; 100
+ 128:	cd df       	rcall	.-102    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('f') ;
+ 12a:	b0 99       	sbic	0x16, 0	; 22
+ 12c:	02 c0       	rjmp	.+4      	; 0x132 <main+0x66>
+ 12e:	86 e6       	ldi	r24, 0x66	; 102
+ 130:	c9 df       	rcall	.-110    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('e') ;
+ 132:	b1 99       	sbic	0x16, 1	; 22
+ 134:	ac c1       	rjmp	.+856    	; 0x48e <__stack+0x2f>
+ 136:	85 e6       	ldi	r24, 0x65	; 101
+ 138:	c5 df       	rcall	.-118    	; 0xc4 <UART_send>
+ 13a:	a9 c1       	rjmp	.+850    	; 0x48e <__stack+0x2f>
 					break;
- 10c:	33 c0       	rjmp	.+102    	; 0x174 <main+0x9e>
 					
 				case 1:		PORTD |= 0b00000100;
- 10e:	92 9a       	sbi	0x12, 2	; 18
-							
+ 13c:	92 9a       	sbi	0x12, 2	; 18
+							if(!(PINC & _BV(Out1))) UART_send('g') ;
+ 13e:	98 99       	sbic	0x13, 0	; 19
+ 140:	02 c0       	rjmp	.+4      	; 0x146 <main+0x7a>
+ 142:	87 e6       	ldi	r24, 0x67	; 103
+ 144:	bf df       	rcall	.-130    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('h') ;
+ 146:	99 99       	sbic	0x13, 1	; 19
+ 148:	02 c0       	rjmp	.+4      	; 0x14e <main+0x82>
+ 14a:	88 e6       	ldi	r24, 0x68	; 104
+ 14c:	bb df       	rcall	.-138    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('i') ;
+ 14e:	9a 99       	sbic	0x13, 2	; 19
+ 150:	02 c0       	rjmp	.+4      	; 0x156 <main+0x8a>
+ 152:	89 e6       	ldi	r24, 0x69	; 105
+ 154:	b7 df       	rcall	.-146    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('k') ;
+ 156:	9b 99       	sbic	0x13, 3	; 19
+ 158:	02 c0       	rjmp	.+4      	; 0x15e <main+0x92>
+ 15a:	8b e6       	ldi	r24, 0x6B	; 107
+ 15c:	b3 df       	rcall	.-154    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('l') ;
+ 15e:	b0 99       	sbic	0x16, 0	; 22
+ 160:	02 c0       	rjmp	.+4      	; 0x166 <main+0x9a>
+ 162:	8c e6       	ldi	r24, 0x6C	; 108
+ 164:	af df       	rcall	.-162    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('m') ;
+ 166:	b1 99       	sbic	0x16, 1	; 22
+ 168:	92 c1       	rjmp	.+804    	; 0x48e <__stack+0x2f>
+ 16a:	8d e6       	ldi	r24, 0x6D	; 109
+ 16c:	ab df       	rcall	.-170    	; 0xc4 <UART_send>
+ 16e:	8f c1       	rjmp	.+798    	; 0x48e <__stack+0x2f>
 					break;
- 110:	31 c0       	rjmp	.+98     	; 0x174 <main+0x9e>
 					
 				case 2:		PORTD |= 0b00001000;
- 112:	93 9a       	sbi	0x12, 3	; 18
-				
+ 170:	93 9a       	sbi	0x12, 3	; 18
+							if(!(PINC & _BV(Out1))) UART_send('n') ;
+ 172:	98 99       	sbic	0x13, 0	; 19
+ 174:	02 c0       	rjmp	.+4      	; 0x17a <main+0xae>
+ 176:	8e e6       	ldi	r24, 0x6E	; 110
+ 178:	a5 df       	rcall	.-182    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('o') ;
+ 17a:	99 99       	sbic	0x13, 1	; 19
+ 17c:	02 c0       	rjmp	.+4      	; 0x182 <main+0xb6>
+ 17e:	8f e6       	ldi	r24, 0x6F	; 111
+ 180:	a1 df       	rcall	.-190    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('p') ;
+ 182:	9a 99       	sbic	0x13, 2	; 19
+ 184:	02 c0       	rjmp	.+4      	; 0x18a <main+0xbe>
+ 186:	80 e7       	ldi	r24, 0x70	; 112
+ 188:	9d df       	rcall	.-198    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('r') ;
+ 18a:	9b 99       	sbic	0x13, 3	; 19
+ 18c:	02 c0       	rjmp	.+4      	; 0x192 <main+0xc6>
+ 18e:	82 e7       	ldi	r24, 0x72	; 114
+ 190:	99 df       	rcall	.-206    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('s') ;
+ 192:	b0 99       	sbic	0x16, 0	; 22
+ 194:	02 c0       	rjmp	.+4      	; 0x19a <main+0xce>
+ 196:	83 e7       	ldi	r24, 0x73	; 115
+ 198:	95 df       	rcall	.-214    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('t') ;
+ 19a:	b1 99       	sbic	0x16, 1	; 22
+ 19c:	78 c1       	rjmp	.+752    	; 0x48e <__stack+0x2f>
+ 19e:	84 e7       	ldi	r24, 0x74	; 116
+ 1a0:	91 df       	rcall	.-222    	; 0xc4 <UART_send>
+ 1a2:	75 c1       	rjmp	.+746    	; 0x48e <__stack+0x2f>
 					break;
- 114:	2f c0       	rjmp	.+94     	; 0x174 <main+0x9e>
 					
 				case 3:		PORTD |= 0b00001100;
- 116:	82 b3       	in	r24, 0x12	; 18
- 118:	8c 60       	ori	r24, 0x0C	; 12
- 11a:	82 bb       	out	0x12, r24	; 18
-				
+ 1a4:	82 b3       	in	r24, 0x12	; 18
+ 1a6:	8c 60       	ori	r24, 0x0C	; 12
+ 1a8:	82 bb       	out	0x12, r24	; 18
+							if(!(PINC & _BV(Out1))) UART_send('x') ;
+ 1aa:	98 99       	sbic	0x13, 0	; 19
+ 1ac:	02 c0       	rjmp	.+4      	; 0x1b2 <main+0xe6>
+ 1ae:	88 e7       	ldi	r24, 0x78	; 120
+ 1b0:	89 df       	rcall	.-238    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('y') ;
+ 1b2:	99 99       	sbic	0x13, 1	; 19
+ 1b4:	02 c0       	rjmp	.+4      	; 0x1ba <main+0xee>
+ 1b6:	89 e7       	ldi	r24, 0x79	; 121
+ 1b8:	85 df       	rcall	.-246    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('z') ;
+ 1ba:	9a 99       	sbic	0x13, 2	; 19
+ 1bc:	02 c0       	rjmp	.+4      	; 0x1c2 <main+0xf6>
+ 1be:	8a e7       	ldi	r24, 0x7A	; 122
+ 1c0:	81 df       	rcall	.-254    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('q') ;
+ 1c2:	9b 99       	sbic	0x13, 3	; 19
+ 1c4:	02 c0       	rjmp	.+4      	; 0x1ca <main+0xfe>
+ 1c6:	81 e7       	ldi	r24, 0x71	; 113
+ 1c8:	7d df       	rcall	.-262    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('w') ;
+ 1ca:	b0 99       	sbic	0x16, 0	; 22
+ 1cc:	02 c0       	rjmp	.+4      	; 0x1d2 <main+0x106>
+ 1ce:	87 e7       	ldi	r24, 0x77	; 119
+ 1d0:	79 df       	rcall	.-270    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('v') ;
+ 1d2:	b1 99       	sbic	0x16, 1	; 22
+ 1d4:	5c c1       	rjmp	.+696    	; 0x48e <__stack+0x2f>
+ 1d6:	86 e7       	ldi	r24, 0x76	; 118
+ 1d8:	75 df       	rcall	.-278    	; 0xc4 <UART_send>
+ 1da:	59 c1       	rjmp	.+690    	; 0x48e <__stack+0x2f>
 					break;
- 11c:	2b c0       	rjmp	.+86     	; 0x174 <main+0x9e>
 					
 				case 4:		PORTD |= 0b00010000;
- 11e:	94 9a       	sbi	0x12, 4	; 18
-				
+ 1dc:	94 9a       	sbi	0x12, 4	; 18
+							if(!(PINC & _BV(Out1))) UART_send('j') ;
+ 1de:	98 99       	sbic	0x13, 0	; 19
+ 1e0:	02 c0       	rjmp	.+4      	; 0x1e6 <main+0x11a>
+ 1e2:	8a e6       	ldi	r24, 0x6A	; 106
+ 1e4:	6f df       	rcall	.-290    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('a') ;
+ 1e6:	99 99       	sbic	0x13, 1	; 19
+ 1e8:	02 c0       	rjmp	.+4      	; 0x1ee <main+0x122>
+ 1ea:	81 e6       	ldi	r24, 0x61	; 97
+ 1ec:	6b df       	rcall	.-298    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('a') ;
+ 1ee:	9a 99       	sbic	0x13, 2	; 19
+ 1f0:	02 c0       	rjmp	.+4      	; 0x1f6 <main+0x12a>
+ 1f2:	81 e6       	ldi	r24, 0x61	; 97
+ 1f4:	67 df       	rcall	.-306    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('a') ;
+ 1f6:	9b 99       	sbic	0x13, 3	; 19
+ 1f8:	02 c0       	rjmp	.+4      	; 0x1fe <main+0x132>
+ 1fa:	81 e6       	ldi	r24, 0x61	; 97
+ 1fc:	63 df       	rcall	.-314    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('a') ;
+ 1fe:	b0 99       	sbic	0x16, 0	; 22
+ 200:	02 c0       	rjmp	.+4      	; 0x206 <__EEPROM_REGION_LENGTH__+0x6>
+ 202:	81 e6       	ldi	r24, 0x61	; 97
+ 204:	5f df       	rcall	.-322    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('a') ;
+ 206:	b1 99       	sbic	0x16, 1	; 22
+ 208:	42 c1       	rjmp	.+644    	; 0x48e <__stack+0x2f>
+ 20a:	81 e6       	ldi	r24, 0x61	; 97
+ 20c:	5b df       	rcall	.-330    	; 0xc4 <UART_send>
+ 20e:	3f c1       	rjmp	.+638    	; 0x48e <__stack+0x2f>
 					break;
- 120:	29 c0       	rjmp	.+82     	; 0x174 <main+0x9e>
 					
 				case 5:		PORTD |= 0b00010100;
- 122:	82 b3       	in	r24, 0x12	; 18
- 124:	84 61       	ori	r24, 0x14	; 20
- 126:	82 bb       	out	0x12, r24	; 18
-				
+ 210:	82 b3       	in	r24, 0x12	; 18
+ 212:	84 61       	ori	r24, 0x14	; 20
+ 214:	82 bb       	out	0x12, r24	; 18
+							if(!(PINC & _BV(Out1))) UART_send('a') ;
+ 216:	98 99       	sbic	0x13, 0	; 19
+ 218:	02 c0       	rjmp	.+4      	; 0x21e <__EEPROM_REGION_LENGTH__+0x1e>
+ 21a:	81 e6       	ldi	r24, 0x61	; 97
+ 21c:	53 df       	rcall	.-346    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('a') ;
+ 21e:	99 99       	sbic	0x13, 1	; 19
+ 220:	02 c0       	rjmp	.+4      	; 0x226 <__EEPROM_REGION_LENGTH__+0x26>
+ 222:	81 e6       	ldi	r24, 0x61	; 97
+ 224:	4f df       	rcall	.-354    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('a') ;
+ 226:	9a 99       	sbic	0x13, 2	; 19
+ 228:	02 c0       	rjmp	.+4      	; 0x22e <__EEPROM_REGION_LENGTH__+0x2e>
+ 22a:	81 e6       	ldi	r24, 0x61	; 97
+ 22c:	4b df       	rcall	.-362    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('a') ;
+ 22e:	9b 99       	sbic	0x13, 3	; 19
+ 230:	02 c0       	rjmp	.+4      	; 0x236 <__EEPROM_REGION_LENGTH__+0x36>
+ 232:	81 e6       	ldi	r24, 0x61	; 97
+ 234:	47 df       	rcall	.-370    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('a') ;
+ 236:	b0 99       	sbic	0x16, 0	; 22
+ 238:	02 c0       	rjmp	.+4      	; 0x23e <__EEPROM_REGION_LENGTH__+0x3e>
+ 23a:	81 e6       	ldi	r24, 0x61	; 97
+ 23c:	43 df       	rcall	.-378    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('a') ;
+ 23e:	b1 99       	sbic	0x16, 1	; 22
+ 240:	26 c1       	rjmp	.+588    	; 0x48e <__stack+0x2f>
+ 242:	81 e6       	ldi	r24, 0x61	; 97
+ 244:	3f df       	rcall	.-386    	; 0xc4 <UART_send>
+ 246:	23 c1       	rjmp	.+582    	; 0x48e <__stack+0x2f>
 					break;
- 128:	25 c0       	rjmp	.+74     	; 0x174 <main+0x9e>
 					
 				case 6:		PORTD |= 0b00011000;																
- 12a:	82 b3       	in	r24, 0x12	; 18
- 12c:	88 61       	ori	r24, 0x18	; 24
- 12e:	82 bb       	out	0x12, r24	; 18
-				
+ 248:	82 b3       	in	r24, 0x12	; 18
+ 24a:	88 61       	ori	r24, 0x18	; 24
+ 24c:	82 bb       	out	0x12, r24	; 18
+							if(!(PINC & _BV(Out1))) UART_send('a') ;
+ 24e:	98 99       	sbic	0x13, 0	; 19
+ 250:	02 c0       	rjmp	.+4      	; 0x256 <__EEPROM_REGION_LENGTH__+0x56>
+ 252:	81 e6       	ldi	r24, 0x61	; 97
+ 254:	37 df       	rcall	.-402    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('a') ;
+ 256:	99 99       	sbic	0x13, 1	; 19
+ 258:	02 c0       	rjmp	.+4      	; 0x25e <__EEPROM_REGION_LENGTH__+0x5e>
+ 25a:	81 e6       	ldi	r24, 0x61	; 97
+ 25c:	33 df       	rcall	.-410    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('a') ;
+ 25e:	9a 99       	sbic	0x13, 2	; 19
+ 260:	02 c0       	rjmp	.+4      	; 0x266 <__EEPROM_REGION_LENGTH__+0x66>
+ 262:	81 e6       	ldi	r24, 0x61	; 97
+ 264:	2f df       	rcall	.-418    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('a') ;
+ 266:	9b 99       	sbic	0x13, 3	; 19
+ 268:	02 c0       	rjmp	.+4      	; 0x26e <__EEPROM_REGION_LENGTH__+0x6e>
+ 26a:	81 e6       	ldi	r24, 0x61	; 97
+ 26c:	2b df       	rcall	.-426    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('a') ;
+ 26e:	b0 99       	sbic	0x16, 0	; 22
+ 270:	02 c0       	rjmp	.+4      	; 0x276 <__EEPROM_REGION_LENGTH__+0x76>
+ 272:	81 e6       	ldi	r24, 0x61	; 97
+ 274:	27 df       	rcall	.-434    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('a') ;
+ 276:	b1 99       	sbic	0x16, 1	; 22
+ 278:	0a c1       	rjmp	.+532    	; 0x48e <__stack+0x2f>
+ 27a:	81 e6       	ldi	r24, 0x61	; 97
+ 27c:	23 df       	rcall	.-442    	; 0xc4 <UART_send>
+ 27e:	07 c1       	rjmp	.+526    	; 0x48e <__stack+0x2f>
 					break;
- 130:	21 c0       	rjmp	.+66     	; 0x174 <main+0x9e>
 					
 				case 7:		PORTD |= 0b00011100;
- 132:	82 b3       	in	r24, 0x12	; 18
- 134:	8c 61       	ori	r24, 0x1C	; 28
- 136:	82 bb       	out	0x12, r24	; 18
-					
+ 280:	82 b3       	in	r24, 0x12	; 18
+ 282:	8c 61       	ori	r24, 0x1C	; 28
+ 284:	82 bb       	out	0x12, r24	; 18
+							if(!(PINC & _BV(Out1))) UART_send('a') ;
+ 286:	98 99       	sbic	0x13, 0	; 19
+ 288:	02 c0       	rjmp	.+4      	; 0x28e <__EEPROM_REGION_LENGTH__+0x8e>
+ 28a:	81 e6       	ldi	r24, 0x61	; 97
+ 28c:	1b df       	rcall	.-458    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('a') ;
+ 28e:	99 99       	sbic	0x13, 1	; 19
+ 290:	02 c0       	rjmp	.+4      	; 0x296 <__EEPROM_REGION_LENGTH__+0x96>
+ 292:	81 e6       	ldi	r24, 0x61	; 97
+ 294:	17 df       	rcall	.-466    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('a') ;
+ 296:	9a 99       	sbic	0x13, 2	; 19
+ 298:	02 c0       	rjmp	.+4      	; 0x29e <__EEPROM_REGION_LENGTH__+0x9e>
+ 29a:	81 e6       	ldi	r24, 0x61	; 97
+ 29c:	13 df       	rcall	.-474    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('a') ;
+ 29e:	9b 99       	sbic	0x13, 3	; 19
+ 2a0:	02 c0       	rjmp	.+4      	; 0x2a6 <__EEPROM_REGION_LENGTH__+0xa6>
+ 2a2:	81 e6       	ldi	r24, 0x61	; 97
+ 2a4:	0f df       	rcall	.-482    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('a') ;
+ 2a6:	b0 99       	sbic	0x16, 0	; 22
+ 2a8:	02 c0       	rjmp	.+4      	; 0x2ae <__EEPROM_REGION_LENGTH__+0xae>
+ 2aa:	81 e6       	ldi	r24, 0x61	; 97
+ 2ac:	0b df       	rcall	.-490    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('a') ;
+ 2ae:	b1 99       	sbic	0x16, 1	; 22
+ 2b0:	ee c0       	rjmp	.+476    	; 0x48e <__stack+0x2f>
+ 2b2:	81 e6       	ldi	r24, 0x61	; 97
+ 2b4:	07 df       	rcall	.-498    	; 0xc4 <UART_send>
+ 2b6:	eb c0       	rjmp	.+470    	; 0x48e <__stack+0x2f>
 					break;
- 138:	1d c0       	rjmp	.+58     	; 0x174 <main+0x9e>
 					
 				case 8:		PORTD |= 0b00100000;
- 13a:	95 9a       	sbi	0x12, 5	; 18
-					
+ 2b8:	95 9a       	sbi	0x12, 5	; 18
+							if(!(PINC & _BV(Out1))) UART_send('a') ;
+ 2ba:	98 99       	sbic	0x13, 0	; 19
+ 2bc:	02 c0       	rjmp	.+4      	; 0x2c2 <__EEPROM_REGION_LENGTH__+0xc2>
+ 2be:	81 e6       	ldi	r24, 0x61	; 97
+ 2c0:	01 df       	rcall	.-510    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('a') ;
+ 2c2:	99 99       	sbic	0x13, 1	; 19
+ 2c4:	02 c0       	rjmp	.+4      	; 0x2ca <__EEPROM_REGION_LENGTH__+0xca>
+ 2c6:	81 e6       	ldi	r24, 0x61	; 97
+ 2c8:	fd de       	rcall	.-518    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('a') ;
+ 2ca:	9a 99       	sbic	0x13, 2	; 19
+ 2cc:	02 c0       	rjmp	.+4      	; 0x2d2 <__EEPROM_REGION_LENGTH__+0xd2>
+ 2ce:	81 e6       	ldi	r24, 0x61	; 97
+ 2d0:	f9 de       	rcall	.-526    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('a') ;
+ 2d2:	9b 99       	sbic	0x13, 3	; 19
+ 2d4:	02 c0       	rjmp	.+4      	; 0x2da <__EEPROM_REGION_LENGTH__+0xda>
+ 2d6:	81 e6       	ldi	r24, 0x61	; 97
+ 2d8:	f5 de       	rcall	.-534    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('a') ;
+ 2da:	b0 99       	sbic	0x16, 0	; 22
+ 2dc:	02 c0       	rjmp	.+4      	; 0x2e2 <__EEPROM_REGION_LENGTH__+0xe2>
+ 2de:	81 e6       	ldi	r24, 0x61	; 97
+ 2e0:	f1 de       	rcall	.-542    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('a') ;
+ 2e2:	b1 99       	sbic	0x16, 1	; 22
+ 2e4:	d4 c0       	rjmp	.+424    	; 0x48e <__stack+0x2f>
+ 2e6:	81 e6       	ldi	r24, 0x61	; 97
+ 2e8:	ed de       	rcall	.-550    	; 0xc4 <UART_send>
+ 2ea:	d1 c0       	rjmp	.+418    	; 0x48e <__stack+0x2f>
 					break;
- 13c:	1b c0       	rjmp	.+54     	; 0x174 <main+0x9e>
 					
 				case 9:		PORTD |= 0b00100100;
- 13e:	82 b3       	in	r24, 0x12	; 18
- 140:	84 62       	ori	r24, 0x24	; 36
- 142:	82 bb       	out	0x12, r24	; 18
-					
+ 2ec:	82 b3       	in	r24, 0x12	; 18
+ 2ee:	84 62       	ori	r24, 0x24	; 36
+ 2f0:	82 bb       	out	0x12, r24	; 18
+							if(!(PINC & _BV(Out1))) UART_send('a') ;
+ 2f2:	98 99       	sbic	0x13, 0	; 19
+ 2f4:	02 c0       	rjmp	.+4      	; 0x2fa <__EEPROM_REGION_LENGTH__+0xfa>
+ 2f6:	81 e6       	ldi	r24, 0x61	; 97
+ 2f8:	e5 de       	rcall	.-566    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('a') ;
+ 2fa:	99 99       	sbic	0x13, 1	; 19
+ 2fc:	02 c0       	rjmp	.+4      	; 0x302 <__EEPROM_REGION_LENGTH__+0x102>
+ 2fe:	81 e6       	ldi	r24, 0x61	; 97
+ 300:	e1 de       	rcall	.-574    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('a') ;
+ 302:	9a 99       	sbic	0x13, 2	; 19
+ 304:	02 c0       	rjmp	.+4      	; 0x30a <__EEPROM_REGION_LENGTH__+0x10a>
+ 306:	81 e6       	ldi	r24, 0x61	; 97
+ 308:	dd de       	rcall	.-582    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('a') ;
+ 30a:	9b 99       	sbic	0x13, 3	; 19
+ 30c:	02 c0       	rjmp	.+4      	; 0x312 <__EEPROM_REGION_LENGTH__+0x112>
+ 30e:	81 e6       	ldi	r24, 0x61	; 97
+ 310:	d9 de       	rcall	.-590    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('a') ;
+ 312:	b0 99       	sbic	0x16, 0	; 22
+ 314:	02 c0       	rjmp	.+4      	; 0x31a <__EEPROM_REGION_LENGTH__+0x11a>
+ 316:	81 e6       	ldi	r24, 0x61	; 97
+ 318:	d5 de       	rcall	.-598    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('a') ;
+ 31a:	b1 99       	sbic	0x16, 1	; 22
+ 31c:	b8 c0       	rjmp	.+368    	; 0x48e <__stack+0x2f>
+ 31e:	81 e6       	ldi	r24, 0x61	; 97
+ 320:	d1 de       	rcall	.-606    	; 0xc4 <UART_send>
+ 322:	b5 c0       	rjmp	.+362    	; 0x48e <__stack+0x2f>
 					break;
- 144:	17 c0       	rjmp	.+46     	; 0x174 <main+0x9e>
 					
 				case 10:	PORTD |= 0b00101000;
- 146:	82 b3       	in	r24, 0x12	; 18
- 148:	88 62       	ori	r24, 0x28	; 40
- 14a:	82 bb       	out	0x12, r24	; 18
-					
+ 324:	82 b3       	in	r24, 0x12	; 18
+ 326:	88 62       	ori	r24, 0x28	; 40
+ 328:	82 bb       	out	0x12, r24	; 18
+							if(!(PINC & _BV(Out1))) UART_send('a') ;
+ 32a:	98 99       	sbic	0x13, 0	; 19
+ 32c:	02 c0       	rjmp	.+4      	; 0x332 <__EEPROM_REGION_LENGTH__+0x132>
+ 32e:	81 e6       	ldi	r24, 0x61	; 97
+ 330:	c9 de       	rcall	.-622    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('a') ;
+ 332:	99 99       	sbic	0x13, 1	; 19
+ 334:	02 c0       	rjmp	.+4      	; 0x33a <__EEPROM_REGION_LENGTH__+0x13a>
+ 336:	81 e6       	ldi	r24, 0x61	; 97
+ 338:	c5 de       	rcall	.-630    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('b') ;
+ 33a:	9a 99       	sbic	0x13, 2	; 19
+ 33c:	02 c0       	rjmp	.+4      	; 0x342 <__EEPROM_REGION_LENGTH__+0x142>
+ 33e:	82 e6       	ldi	r24, 0x62	; 98
+ 340:	c1 de       	rcall	.-638    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('b') ;
+ 342:	9b 99       	sbic	0x13, 3	; 19
+ 344:	02 c0       	rjmp	.+4      	; 0x34a <__EEPROM_REGION_LENGTH__+0x14a>
+ 346:	82 e6       	ldi	r24, 0x62	; 98
+ 348:	bd de       	rcall	.-646    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('b') ;
+ 34a:	b0 99       	sbic	0x16, 0	; 22
+ 34c:	02 c0       	rjmp	.+4      	; 0x352 <__EEPROM_REGION_LENGTH__+0x152>
+ 34e:	82 e6       	ldi	r24, 0x62	; 98
+ 350:	b9 de       	rcall	.-654    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('b') ;
+ 352:	b1 99       	sbic	0x16, 1	; 22
+ 354:	9c c0       	rjmp	.+312    	; 0x48e <__stack+0x2f>
+ 356:	82 e6       	ldi	r24, 0x62	; 98
+ 358:	b5 de       	rcall	.-662    	; 0xc4 <UART_send>
+ 35a:	99 c0       	rjmp	.+306    	; 0x48e <__stack+0x2f>
 					break;
- 14c:	13 c0       	rjmp	.+38     	; 0x174 <main+0x9e>
 					
 				case 11:	PORTD |= 0b0010110;
- 14e:	82 b3       	in	r24, 0x12	; 18
- 150:	86 61       	ori	r24, 0x16	; 22
- 152:	82 bb       	out	0x12, r24	; 18
-					
+ 35c:	82 b3       	in	r24, 0x12	; 18
+ 35e:	86 61       	ori	r24, 0x16	; 22
+ 360:	82 bb       	out	0x12, r24	; 18
+							if(!(PINC & _BV(Out1))) UART_send('b') ;
+ 362:	98 99       	sbic	0x13, 0	; 19
+ 364:	02 c0       	rjmp	.+4      	; 0x36a <__EEPROM_REGION_LENGTH__+0x16a>
+ 366:	82 e6       	ldi	r24, 0x62	; 98
+ 368:	ad de       	rcall	.-678    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('b') ;
+ 36a:	99 99       	sbic	0x13, 1	; 19
+ 36c:	02 c0       	rjmp	.+4      	; 0x372 <__EEPROM_REGION_LENGTH__+0x172>
+ 36e:	82 e6       	ldi	r24, 0x62	; 98
+ 370:	a9 de       	rcall	.-686    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('b') ;
+ 372:	9a 99       	sbic	0x13, 2	; 19
+ 374:	02 c0       	rjmp	.+4      	; 0x37a <__EEPROM_REGION_LENGTH__+0x17a>
+ 376:	82 e6       	ldi	r24, 0x62	; 98
+ 378:	a5 de       	rcall	.-694    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('b') ;
+ 37a:	9b 99       	sbic	0x13, 3	; 19
+ 37c:	02 c0       	rjmp	.+4      	; 0x382 <__EEPROM_REGION_LENGTH__+0x182>
+ 37e:	82 e6       	ldi	r24, 0x62	; 98
+ 380:	a1 de       	rcall	.-702    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('b') ;
+ 382:	b0 99       	sbic	0x16, 0	; 22
+ 384:	02 c0       	rjmp	.+4      	; 0x38a <__EEPROM_REGION_LENGTH__+0x18a>
+ 386:	82 e6       	ldi	r24, 0x62	; 98
+ 388:	9d de       	rcall	.-710    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('b') ;
+ 38a:	b1 99       	sbic	0x16, 1	; 22
+ 38c:	80 c0       	rjmp	.+256    	; 0x48e <__stack+0x2f>
+ 38e:	82 e6       	ldi	r24, 0x62	; 98
+ 390:	99 de       	rcall	.-718    	; 0xc4 <UART_send>
+ 392:	7d c0       	rjmp	.+250    	; 0x48e <__stack+0x2f>
 					break;
- 154:	0f c0       	rjmp	.+30     	; 0x174 <main+0x9e>
 					
 				case 12:	PORTD |= 0b00110000;
- 156:	82 b3       	in	r24, 0x12	; 18
- 158:	80 63       	ori	r24, 0x30	; 48
- 15a:	82 bb       	out	0x12, r24	; 18
-					
+ 394:	82 b3       	in	r24, 0x12	; 18
+ 396:	80 63       	ori	r24, 0x30	; 48
+ 398:	82 bb       	out	0x12, r24	; 18
+							if(!(PINC & _BV(Out1))) UART_send('b') ;
+ 39a:	98 99       	sbic	0x13, 0	; 19
+ 39c:	02 c0       	rjmp	.+4      	; 0x3a2 <__EEPROM_REGION_LENGTH__+0x1a2>
+ 39e:	82 e6       	ldi	r24, 0x62	; 98
+ 3a0:	91 de       	rcall	.-734    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('b') ;
+ 3a2:	99 99       	sbic	0x13, 1	; 19
+ 3a4:	02 c0       	rjmp	.+4      	; 0x3aa <__EEPROM_REGION_LENGTH__+0x1aa>
+ 3a6:	82 e6       	ldi	r24, 0x62	; 98
+ 3a8:	8d de       	rcall	.-742    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('c') ;
+ 3aa:	9a 99       	sbic	0x13, 2	; 19
+ 3ac:	02 c0       	rjmp	.+4      	; 0x3b2 <__EEPROM_REGION_LENGTH__+0x1b2>
+ 3ae:	83 e6       	ldi	r24, 0x63	; 99
+ 3b0:	89 de       	rcall	.-750    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('c') ;
+ 3b2:	9b 99       	sbic	0x13, 3	; 19
+ 3b4:	02 c0       	rjmp	.+4      	; 0x3ba <__EEPROM_REGION_LENGTH__+0x1ba>
+ 3b6:	83 e6       	ldi	r24, 0x63	; 99
+ 3b8:	85 de       	rcall	.-758    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('c') ;
+ 3ba:	b0 99       	sbic	0x16, 0	; 22
+ 3bc:	02 c0       	rjmp	.+4      	; 0x3c2 <__EEPROM_REGION_LENGTH__+0x1c2>
+ 3be:	83 e6       	ldi	r24, 0x63	; 99
+ 3c0:	81 de       	rcall	.-766    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('c') ;
+ 3c2:	b1 99       	sbic	0x16, 1	; 22
+ 3c4:	64 c0       	rjmp	.+200    	; 0x48e <__stack+0x2f>
+ 3c6:	83 e6       	ldi	r24, 0x63	; 99
+ 3c8:	7d de       	rcall	.-774    	; 0xc4 <UART_send>
+ 3ca:	61 c0       	rjmp	.+194    	; 0x48e <__stack+0x2f>
 					break;
- 15c:	0b c0       	rjmp	.+22     	; 0x174 <main+0x9e>
 					
 				case 13:	PORTD |= 0b00110100;
- 15e:	82 b3       	in	r24, 0x12	; 18
- 160:	84 63       	ori	r24, 0x34	; 52
- 162:	82 bb       	out	0x12, r24	; 18
-					
+ 3cc:	82 b3       	in	r24, 0x12	; 18
+ 3ce:	84 63       	ori	r24, 0x34	; 52
+ 3d0:	82 bb       	out	0x12, r24	; 18
+							if(!(PINC & _BV(Out1))) UART_send('d') ;
+ 3d2:	98 99       	sbic	0x13, 0	; 19
+ 3d4:	02 c0       	rjmp	.+4      	; 0x3da <__EEPROM_REGION_LENGTH__+0x1da>
+ 3d6:	84 e6       	ldi	r24, 0x64	; 100
+ 3d8:	75 de       	rcall	.-790    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('h') ;
+ 3da:	99 99       	sbic	0x13, 1	; 19
+ 3dc:	02 c0       	rjmp	.+4      	; 0x3e2 <__EEPROM_REGION_LENGTH__+0x1e2>
+ 3de:	88 e6       	ldi	r24, 0x68	; 104
+ 3e0:	71 de       	rcall	.-798    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('d') ;
+ 3e2:	9a 99       	sbic	0x13, 2	; 19
+ 3e4:	02 c0       	rjmp	.+4      	; 0x3ea <__EEPROM_REGION_LENGTH__+0x1ea>
+ 3e6:	84 e6       	ldi	r24, 0x64	; 100
+ 3e8:	6d de       	rcall	.-806    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('k') ;
+ 3ea:	9b 99       	sbic	0x13, 3	; 19
+ 3ec:	02 c0       	rjmp	.+4      	; 0x3f2 <__EEPROM_REGION_LENGTH__+0x1f2>
+ 3ee:	8b e6       	ldi	r24, 0x6B	; 107
+ 3f0:	69 de       	rcall	.-814    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('r') ;
+ 3f2:	b0 99       	sbic	0x16, 0	; 22
+ 3f4:	02 c0       	rjmp	.+4      	; 0x3fa <__EEPROM_REGION_LENGTH__+0x1fa>
+ 3f6:	82 e7       	ldi	r24, 0x72	; 114
+ 3f8:	65 de       	rcall	.-822    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('e') ;
+ 3fa:	b1 99       	sbic	0x16, 1	; 22
+ 3fc:	48 c0       	rjmp	.+144    	; 0x48e <__stack+0x2f>
+ 3fe:	85 e6       	ldi	r24, 0x65	; 101
+ 400:	61 de       	rcall	.-830    	; 0xc4 <UART_send>
+ 402:	45 c0       	rjmp	.+138    	; 0x48e <__stack+0x2f>
 					break;
- 164:	07 c0       	rjmp	.+14     	; 0x174 <main+0x9e>
 					
 				case 14:	PORTD |= 0b00111000;
- 166:	82 b3       	in	r24, 0x12	; 18
- 168:	88 63       	ori	r24, 0x38	; 56
- 16a:	82 bb       	out	0x12, r24	; 18
-					
+ 404:	82 b3       	in	r24, 0x12	; 18
+ 406:	88 63       	ori	r24, 0x38	; 56
+ 408:	82 bb       	out	0x12, r24	; 18
+							if(!(PINC & _BV(Out1))) UART_send('s') ;
+ 40a:	98 99       	sbic	0x13, 0	; 19
+ 40c:	02 c0       	rjmp	.+4      	; 0x412 <__DATA_REGION_LENGTH__+0x12>
+ 40e:	83 e7       	ldi	r24, 0x73	; 115
+ 410:	59 de       	rcall	.-846    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('g') ;
+ 412:	99 99       	sbic	0x13, 1	; 19
+ 414:	02 c0       	rjmp	.+4      	; 0x41a <__DATA_REGION_LENGTH__+0x1a>
+ 416:	87 e6       	ldi	r24, 0x67	; 103
+ 418:	55 de       	rcall	.-854    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('c') ;
+ 41a:	9a 99       	sbic	0x13, 2	; 19
+ 41c:	02 c0       	rjmp	.+4      	; 0x422 <__DATA_REGION_LENGTH__+0x22>
+ 41e:	83 e6       	ldi	r24, 0x63	; 99
+ 420:	51 de       	rcall	.-862    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('b') ;
+ 422:	9b 99       	sbic	0x13, 3	; 19
+ 424:	02 c0       	rjmp	.+4      	; 0x42a <__DATA_REGION_LENGTH__+0x2a>
+ 426:	82 e6       	ldi	r24, 0x62	; 98
+ 428:	4d de       	rcall	.-870    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('r') ;
+ 42a:	b0 99       	sbic	0x16, 0	; 22
+ 42c:	02 c0       	rjmp	.+4      	; 0x432 <__DATA_REGION_LENGTH__+0x32>
+ 42e:	82 e7       	ldi	r24, 0x72	; 114
+ 430:	49 de       	rcall	.-878    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('y') ;
+ 432:	b1 99       	sbic	0x16, 1	; 22
+ 434:	2c c0       	rjmp	.+88     	; 0x48e <__stack+0x2f>
+ 436:	89 e7       	ldi	r24, 0x79	; 121
+ 438:	45 de       	rcall	.-886    	; 0xc4 <UART_send>
+ 43a:	29 c0       	rjmp	.+82     	; 0x48e <__stack+0x2f>
 					break;
- 16c:	03 c0       	rjmp	.+6      	; 0x174 <main+0x9e>
 					
 				case 15:	PORTD |= 0b00111100;
- 16e:	82 b3       	in	r24, 0x12	; 18
- 170:	8c 63       	ori	r24, 0x3C	; 60
- 172:	82 bb       	out	0x12, r24	; 18
-					
+ 43c:	82 b3       	in	r24, 0x12	; 18
+ 43e:	8c 63       	ori	r24, 0x3C	; 60
+ 440:	82 bb       	out	0x12, r24	; 18
+							if(!(PINC & _BV(Out1))) UART_send('j') ;
+ 442:	98 99       	sbic	0x13, 0	; 19
+ 444:	02 c0       	rjmp	.+4      	; 0x44a <__DATA_REGION_LENGTH__+0x4a>
+ 446:	8a e6       	ldi	r24, 0x6A	; 106
+ 448:	3d de       	rcall	.-902    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out2))) UART_send('v') ;
+ 44a:	99 99       	sbic	0x13, 1	; 19
+ 44c:	02 c0       	rjmp	.+4      	; 0x452 <__DATA_REGION_LENGTH__+0x52>
+ 44e:	86 e7       	ldi	r24, 0x76	; 118
+ 450:	39 de       	rcall	.-910    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out3))) UART_send('d') ;
+ 452:	9a 99       	sbic	0x13, 2	; 19
+ 454:	02 c0       	rjmp	.+4      	; 0x45a <__DATA_REGION_LENGTH__+0x5a>
+ 456:	84 e6       	ldi	r24, 0x64	; 100
+ 458:	35 de       	rcall	.-918    	; 0xc4 <UART_send>
+							if(!(PINC & _BV(Out4))) UART_send('e') ;
+ 45a:	9b 99       	sbic	0x13, 3	; 19
+ 45c:	02 c0       	rjmp	.+4      	; 0x462 <__stack+0x3>
+ 45e:	85 e6       	ldi	r24, 0x65	; 101
+ 460:	31 de       	rcall	.-926    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out5))) UART_send('s') ;
+ 462:	b0 99       	sbic	0x16, 0	; 22
+ 464:	02 c0       	rjmp	.+4      	; 0x46a <__stack+0xb>
+ 466:	83 e7       	ldi	r24, 0x73	; 115
+ 468:	2d de       	rcall	.-934    	; 0xc4 <UART_send>
+							if(!(PINB & _BV(Out6))) UART_send('q') ;
+ 46a:	b1 99       	sbic	0x16, 1	; 22
+ 46c:	0b c0       	rjmp	.+22     	; 0x484 <__stack+0x25>
+ 46e:	81 e7       	ldi	r24, 0x71	; 113
+ 470:	29 de       	rcall	.-942    	; 0xc4 <UART_send>
+ 472:	08 c0       	rjmp	.+16     	; 0x484 <__stack+0x25>
 					break;
 				
 			}
 			
-			encoder();
- 174:	79 df       	rcall	.-270    	; 0x68 <encoder>
-	DDRB &= ~((1 <<But1) | (1 << But2) | (1 << But3) | (1 << Enc_but) | (1 << Out6) | (1 << Out5));	//Входы для кнопок и левой половины
+			encoder();		//Опрашиваем энкодер
+ 474:	f9 dd       	rcall	.-1038   	; 0x68 <encoder>
+			
+			UART_send(count);
+ 476:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <count>
+ 47a:	24 de       	rcall	.-952    	; 0xc4 <UART_send>
 	
-	
-    while(1)
-    {
-        for (uint8_t i = 0; i < 16; i++)		//Переключаем адреса входов с 0 по 15 на 6-ти мультиплексорах
- 176:	cf 5f       	subi	r28, 0xFF	; 255
- 178:	c0 31       	cpi	r28, 0x10	; 16
- 17a:	08 f4       	brcc	.+2      	; 0x17e <main+0xa8>
- 17c:	b9 cf       	rjmp	.-142    	; 0xf0 <main+0x1a>
-        {
-			PORTD &= ~((1 << Address3) | (1 << Address2) | (1 << Address1) | (1 << Address0));	//Сброс адреса
- 17e:	82 b3       	in	r24, 0x12	; 18
- 180:	83 7c       	andi	r24, 0xC3	; 195
- 182:	82 bb       	out	0x12, r24	; 18
-	DDRB &= ~((1 <<But1) | (1 << But2) | (1 << But3) | (1 << Enc_but) | (1 << Out6) | (1 << Out5));	//Входы для кнопок и левой половины
-	
+	UART_ini();
 	
     while(1)
     {
         for (uint8_t i = 0; i < 16; i++)		//Переключаем адреса входов с 0 по 15 на 6-ти мультиплексорах
- 184:	cd 2f       	mov	r28, r29
- 186:	c0 cf       	rjmp	.-128    	; 0x108 <main+0x32>
+ 47c:	c0 31       	cpi	r28, 0x10	; 16
+ 47e:	08 f4       	brcc	.+2      	; 0x482 <__stack+0x23>
+ 480:	32 ce       	rjmp	.-924    	; 0xe6 <main+0x1a>
+ 482:	2f ce       	rjmp	.-930    	; 0xe2 <main+0x16>
+							if(!(PINB & _BV(Out6))) UART_send('q') ;
+					break;
+				
+			}
+			
+			encoder();		//Опрашиваем энкодер
+ 484:	f1 dd       	rcall	.-1054   	; 0x68 <encoder>
+			
+			UART_send(count);
+ 486:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <count>
+ 48a:	1c de       	rcall	.-968    	; 0xc4 <UART_send>
+ 48c:	2a ce       	rjmp	.-940    	; 0xe2 <main+0x16>
+							if(!(PINB & _BV(Out6))) UART_send('q') ;
+					break;
+				
+			}
+			
+			encoder();		//Опрашиваем энкодер
+ 48e:	ec dd       	rcall	.-1064   	; 0x68 <encoder>
+			
+			UART_send(count);
+ 490:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <count>
+ 494:	17 de       	rcall	.-978    	; 0xc4 <UART_send>
+ 496:	27 ce       	rjmp	.-946    	; 0xe6 <main+0x1a>
 
-00000188 <_exit>:
- 188:	f8 94       	cli
+00000498 <_exit>:
+ 498:	f8 94       	cli
 
-0000018a <__stop_program>:
- 18a:	ff cf       	rjmp	.-2      	; 0x18a <__stop_program>
+0000049a <__stop_program>:
+ 49a:	ff cf       	rjmp	.-2      	; 0x49a <__stop_program>
